@@ -31,7 +31,7 @@ const blogSchema = new Schema({
     required: true,
     trim: true,
   }
-});
+}, { timestamps: true });
 
 const Blog = model("Blog", blogSchema);
 

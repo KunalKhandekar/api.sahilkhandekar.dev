@@ -175,7 +175,7 @@ export const createBlogController = async (req, res) => {
 
 export const getBlogsController = async (_, res) => {
   try {
-    const blogs = await Blog.find({}).lean();
+    const blogs = await Blog.find({}).sort({ updatedAt: -1 }).lean();
 
     return ApiResponse.success(res, {
       message:
